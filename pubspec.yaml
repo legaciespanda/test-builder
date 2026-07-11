@@ -1,0 +1,27 @@
+name: flutter_template_app
+description: A Flutter template app that works with the APK Builder
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.9.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  shared_preferences: ^2.5.3
+  http: ^1.6.0
+  google_fonts: ^8.1.0
+  flutter_svg: ^2.3.0
+  intl: ^0.20.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/config/
