@@ -98,7 +98,7 @@ class _SplashScreenState extends State<SplashScreen>
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    BuildConfig.companyName,
+                    BuildConfig.appName,
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.white.withOpacity(0.8),

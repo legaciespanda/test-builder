@@ -41,7 +41,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
             ),
             Text(
-              BuildConfig.companyEmail,
+              BuildConfig.appName,
               style: TextStyle(color: Colors.grey.shade500),
             ),
             const SizedBox(height: 32),
