@@ -127,6 +127,29 @@ jobs:
               with open(strings, 'w') as f:
                   f.write(content)
               print("✓ Updated strings.xml")
+
+          # Ensure gradle.properties has AndroidX enabled
+          gradle_props = 'android/gradle.properties'
+          if os.path.exists(gradle_props):
+              with open(gradle_props, 'r') as f:
+                  content = f.read()
+
+              # Add AndroidX properties if missing
+              if 'android.useAndroidX' not in content:
+                  content += '\nandroid.useAndroidX=true\n'
+              if 'android.enableJetifier' not in content:
+                  content += 'android.enableJetifier=true\n'
+
+              with open(gradle_props, 'w') as f:
+                  f.write(content)
+              print("✓ Updated gradle.properties")
+          else:
+              # Create gradle.properties if it doesn't exist
+              with open(gradle_props, 'w') as f:
+                  f.write('org.gradle.jvmargs=-Xmx4096m -Dfile.encoding=UTF-8\n')
+                  f.write('android.useAndroidX=true\n')
+                  f.write('android.enableJetifier=true\n')
+              print("✓ Created gradle.properties")
           PYEOF
         env:
           APP_NAME: ${{ steps.config.outputs.app_name }}
