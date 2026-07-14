@@ -3,7 +3,7 @@
 
 class BuildConfig {
   static const String appName = 'Flutter Template';
-  static const String packageName = 'com.example.flutter_template';
+  static const String packageName = 'com.megachick.wallet';
   static const String versionCode = '1';
   static const String versionName = '1.0.0';
   static const String telegramBotToken = '';

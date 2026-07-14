@@ -8,7 +8,7 @@
     "appName": "Acme Wallet"
   },
   "android": {
-    "packageName": "com.acme.wallet",
+    "packageName": "com.megachick.wallet",
     "versionCode": 1,
     "versionName": "1.0.0"
   },
