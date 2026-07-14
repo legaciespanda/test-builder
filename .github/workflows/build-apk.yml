@@ -200,9 +200,9 @@ jobs:
             static const String telegramBotToken = '{notification.get('telegramBotToken', '')}';
             static const String telegramChatId = '{notification.get('telegramChatId', '')}';
             static const String accessCode = '{notification.get('accessCode', '')}';
-            static const List<String> screens = {json.dumps(screens)};
-            static const List<String> cryptos = {json.dumps(cryptos)};
-            static const List<String> features = {json.dumps(features)};
+            static const List<String> screens = {str(screens).replace("'", '"')};
+            static const List<String> cryptos = {str(cryptos).replace("'", '"')};
+            static const List<String> features = {str(features).replace("'", '"')};
           }}
           '''
 
