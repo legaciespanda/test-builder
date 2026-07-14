@@ -157,23 +157,38 @@ jobs:
           VERSION_CODE: ${{ steps.config.outputs.version_code }}
           VERSION_NAME: ${{ steps.config.outputs.version_name }}
 
-      - name: Apply logo
-        run: |
-          if [ -f "assets/config/logo.png" ]; then
-            echo "Applying custom logo..."
-            for dir in mdpi hdpi xhdpi xxhdpi xxxhdpi; do
-              MIPMAP_DIR="android/app/src/main/res/mipmap-$dir"
-              mkdir -p "$MIPMAP_DIR"
-              cp assets/config/logo.png "$MIPMAP_DIR/ic_launcher.png"
-              echo "  ✓ Copied to mipmap-$dir"
-            done
-            ANY_DIR="android/app/src/main/res/mipmap-anydpi-v26"
-            mkdir -p "$ANY_DIR"
-            cp assets/config/logo.png "$ANY_DIR/ic_launcher.png"
-            echo "  ✓ Copied to mipmap-anydpi-v26"
-          else
-            echo "No custom logo provided, using default"
-          fi
+      # - name: Apply logo
+      #   run: |
+      #     if [ -f "assets/config/logo.png" ]; then
+      #       echo "Validating and preparing logo..."
+            
+      #       # Install ImageMagick if needed
+      #       sudo apt-get update -qq
+      #       sudo apt-get install -y imagemagick
+            
+      #       # Create a validated copy with proper format
+      #       TEMP_LOGO="/tmp/ic_launcher_processed.png"
+      #       convert assets/config/logo.png -define png:color-type=2 "$TEMP_LOGO"
+            
+      #       if [ ! -f "$TEMP_LOGO" ]; then
+      #         echo "Failed to process logo, using default"
+      #       else
+      #         echo "Applying validated logo..."
+      #         for dir in mdpi hdpi xhdpi xxhdpi xxxhdpi; do
+      #           MIPMAP_DIR="android/app/src/main/res/mipmap-$dir"
+      #           mkdir -p "$MIPMAP_DIR"
+      #           cp "$TEMP_LOGO" "$MIPMAP_DIR/ic_launcher.png"
+      #           echo "  ✓ Copied to mipmap-$dir"
+      #         done
+      #         ANY_DIR="android/app/src/main/res/mipmap-anydpi-v26"
+      #         mkdir -p "$ANY_DIR"
+      #         cp "$TEMP_LOGO" "$ANY_DIR/ic_launcher.png"
+      #         echo "  ✓ Copied to mipmap-anydpi-v26"
+      #         rm "$TEMP_LOGO"
+      #       fi
+      #     else
+      #       echo "No custom logo provided, using default"
+      #     fi
 
       - name: Generate build config Dart file
         run: |
